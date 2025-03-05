@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+  touch-action: manipulation; /* Improve touch response */
+}
+
+body {
+  color: #4b5563; /* Softer than pure black text */
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #f8f9fa; /* Slightly off-white background */
+  text-rendering: optimizeLegibility; /* Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 640px) {
+  button,
+  a {
+    cursor: default; /* Better mobile experience by removing hover cursors */
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#b8c4d0] hover:bg-[#a5b4c2] text-[#4b5563] border-none py-2 sm:py-2.5 px-4 sm:px-5 rounded-md text-sm sm:text-base cursor-pointer transition-all duration-300 shadow-sm;
+  }
+
+  .btn-secondary {
+    @apply bg-[#d8d3cd] hover:bg-[#c9c3bc] text-[#4b5563] border-none py-2 sm:py-2.5 px-4 sm:px-5 rounded-md text-sm sm:text-base cursor-pointer transition-all duration-300 shadow-sm;
+  }
+
+  .btn-outline {
+    @apply bg-transparent hover:bg-[#f1f3f5] text-[#6b7280] border border-[#e5e7eb] py-2 sm:py-2.5 px-4 sm:px-5 rounded-md text-sm sm:text-base cursor-pointer transition-all duration-300 shadow-sm;
+  }
+}
+
+/* Custom scrollbar - only visible on desktop */
+@media (min-width: 768px) {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: rgba(240, 240, 240, 0.5);
+    border-radius: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(184, 196, 208, 0.5);
+    border-radius: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: rgba(184, 196, 208, 0.7);
+  }
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Image transitions */
+.image-fade-in {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image-fade-in.loaded {
+  opacity: 1;
+}
+
+/* Thumbnail hover effect */
+@keyframes subtle-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Only apply hover animations on non-touch devices */
+@media (hover: hover) {
+  button:hover {
+    animation: subtle-bounce 0.5s ease-in-out;
+  }
+}
+

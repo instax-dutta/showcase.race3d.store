@@ -1,0 +1,411 @@
+// Define a type for gallery items
+export type GalleryItem = {
+  id: number
+  url: string
+  title: string
+}
+
+// Keep the original image array for reference
+export const images = [
+  "https://i.postimg.cc/dtLfGzKK/SZV02564.jpg",
+  "https://i.postimg.cc/Pxy7MHxd/SZV02565.jpg",
+  "https://i.postimg.cc/cCDVdWyF/SZV02566.jpg",
+  "https://i.postimg.cc/DwDnqqNx/SZV02567.jpg",
+  "https://i.postimg.cc/nLCMxFyP/SZV02568.jpg",
+  "https://i.postimg.cc/gkHxqByN/SZV02569.jpg",
+  "https://i.postimg.cc/7YkCzyz5/SZV02570.jpg",
+  "https://i.postimg.cc/BbWjNrww/SZV02571.jpg",
+  "https://i.postimg.cc/c18YYm5b/SZV02572.jpg",
+  "https://i.postimg.cc/YCtm5w25/SZV02573.jpg",
+  "https://i.postimg.cc/RV7Hp0m1/SZV02574.jpg",
+  "https://i.postimg.cc/rsWrkVrk/SZV02575.jpg",
+  "https://i.postimg.cc/vT6mV0YL/SZV02576.jpg",
+  "https://i.postimg.cc/vDFZL5DR/SZV02577.jpg",
+  "https://i.postimg.cc/nzWzryJh/SZV02578.jpg",
+  "https://i.postimg.cc/xdtqDkpH/SZV02579.jpg",
+  "https://i.postimg.cc/FKZkrCzY/SZV02580.jpg",
+  "https://i.postimg.cc/9QyqSQjt/SZV02581.jpg",
+  "https://i.postimg.cc/MKMB7YPL/SZV02582.jpg",
+  "https://i.postimg.cc/gcBRL7DR/SZV02583.jpg",
+  "https://i.postimg.cc/wTZhZrRH/SZV02584.jpg",
+  "https://i.postimg.cc/mDB3VFzH/SZV02585.jpg",
+  "https://i.postimg.cc/VvHjYG7q/SZV02586.jpg",
+  "https://i.postimg.cc/D0zr3kcf/SZV02587.jpg",
+  "https://i.postimg.cc/pTJCtBbC/SZV02588.jpg",
+  "https://i.postimg.cc/6QGbFRpb/SZV02589.jpg",
+  "https://i.postimg.cc/gkN7hm7s/SZV02590.jpg",
+  "https://i.postimg.cc/qvq5XWVT/SZV02591.jpg",
+  "https://i.postimg.cc/X7VhXpsX/SZV02592.jpg",
+  "https://i.postimg.cc/GpZVpKf1/SZV02593.jpg",
+  "https://i.postimg.cc/pXRN80LW/SZV02594.jpg",
+  "https://i.postimg.cc/Gmg6WdJt/SZV02595.jpg",
+  "https://i.postimg.cc/X78Rgwrw/SZV02596.jpg",
+  "https://i.postimg.cc/zf6Zg8V6/SZV02597.jpg",
+  "https://i.postimg.cc/W4Hjw0f9/SZV02598.jpg",
+  "https://i.postimg.cc/jj5tfMvw/SZV02599.jpg",
+  "https://i.postimg.cc/13y9mmqK/SZV02600.jpg",
+  "https://i.postimg.cc/vHrYwgcB/SZV02601.jpg",
+  "https://i.postimg.cc/fTnzPjWp/SZV02602.jpg",
+  "https://i.postimg.cc/vmHHzY8m/SZV02603.jpg",
+  "https://i.postimg.cc/rw9wx0kb/SZV02604.jpg",
+  "https://i.postimg.cc/y8KNDhwc/SZV02605.jpg",
+  "https://i.postimg.cc/HWJnRkwc/SZV02606.jpg",
+  "https://i.postimg.cc/k5ndmfLY/SZV02607.jpg",
+  "https://i.postimg.cc/W1cv928v/SZV02608.jpg",
+  "https://i.postimg.cc/qBY03cCg/SZV02609.jpg",
+  "https://i.postimg.cc/Hxvm3XZZ/SZV02610.jpg",
+  "https://i.postimg.cc/cJZdJstm/SZV02611.jpg",
+  "https://i.postimg.cc/cLfsZKCC/SZV02612.jpg",
+  "https://i.postimg.cc/SR5yQCc2/SZV02613.jpg",
+  "https://i.postimg.cc/HnjYCB81/SZV02614.jpg",
+  "https://i.postimg.cc/FRrFT99R/SZV02615.jpg",
+  "https://i.postimg.cc/m2JDTfSX/SZV02616.jpg",
+  "https://i.postimg.cc/fLDy1cvM/SZV02617.jpg",
+  "https://i.postimg.cc/rp6KNX00/SZV02618.jpg",
+  "https://i.postimg.cc/NGNFPr2w/SZV02619.jpg",
+  "https://i.postimg.cc/x8dC1977/SZV02620.jpg",
+  "https://i.postimg.cc/4xyzSgxW/SZV02621.jpg",
+  "https://i.postimg.cc/26hd77Sm/SZV02622.jpg",
+  "https://i.postimg.cc/c17MKhzB/SZV02623.jpg",
+  "https://i.postimg.cc/PJHW3vCD/SZV02624.jpg",
+  "https://i.postimg.cc/tCW0nKjm/SZV02650.jpg",
+  "https://i.postimg.cc/z3mj122y/SZV02651.jpg",
+  "https://i.postimg.cc/0561P6Hv/SZV02652.jpg",
+  "https://i.postimg.cc/7Pp86xp2/SZV02653.jpg",
+  "https://i.postimg.cc/bwcCXr4m/SZV02654.jpg",
+]
+
+// Create gallery items with dummy titles that you can update later
+export const galleryItems: GalleryItem[] = [
+  {
+    id: 1,
+    url: "https://i.postimg.cc/dtLfGzKK/SZV02564.jpg",
+    title: "Elegant Ribbed Vase - White",
+  },
+  {
+    id: 2,
+    url: "https://i.postimg.cc/Pxy7MHxd/SZV02565.jpg",
+    title: "Modern Geometric Planter",
+  },
+  {
+    id: 3,
+    url: "https://i.postimg.cc/cCDVdWyF/SZV02566.jpg",
+    title: "Anime Character Figurine",
+  },
+  {
+    id: 4,
+    url: "https://i.postimg.cc/DwDnqqNx/SZV02567.jpg",
+    title: "Fantasy Warrior Statue",
+  },
+  {
+    id: 5,
+    url: "https://i.postimg.cc/nLCMxFyP/SZV02568.jpg",
+    title: "Decorative Desk Organizer",
+  },
+  {
+    id: 6,
+    url: "https://i.postimg.cc/gkHxqByN/SZV02569.jpg",
+    title: "Minimalist Phone Stand",
+  },
+  {
+    id: 7,
+    url: "https://i.postimg.cc/7YkCzyz5/SZV02570.jpg",
+    title: "Artistic Flower Pot",
+  },
+  {
+    id: 8,
+    url: "https://i.postimg.cc/BbWjNrww/SZV02571.jpg",
+    title: "Gaming Character Model",
+  },
+  {
+    id: 9,
+    url: "https://i.postimg.cc/c18YYm5b/SZV02572.jpg",
+    title: "Sci-Fi Collectible Figure",
+  },
+  {
+    id: 10,
+    url: "https://i.postimg.cc/YCtm5w25/SZV02573.jpg",
+    title: "Architectural Model Piece",
+  },
+  {
+    id: 11,
+    url: "https://i.postimg.cc/RV7Hp0m1/SZV02574.jpg",
+    title: "Custom Jewelry Box",
+  },
+  {
+    id: 12,
+    url: "https://i.postimg.cc/rsWrkVrk/SZV02575.jpg",
+    title: "Tabletop Game Miniature",
+  },
+  {
+    id: 13,
+    url: "https://i.postimg.cc/vT6mV0YL/SZV02576.jpg",
+    title: "Decorative Wall Hanging",
+  },
+  {
+    id: 14,
+    url: "https://i.postimg.cc/vDFZL5DR/SZV02577.jpg",
+    title: "Functional Desk Lamp",
+  },
+  {
+    id: 15,
+    url: "https://i.postimg.cc/nzWzryJh/SZV02578.jpg",
+    title: "Character Bust Sculpture",
+  },
+  {
+    id: 16,
+    url: "https://i.postimg.cc/xdtqDkpH/SZV02579.jpg",
+    title: "Detailed Action Figure",
+  },
+  {
+    id: 17,
+    url: "https://i.postimg.cc/FKZkrCzY/SZV02580.jpg",
+    title: "Geometric Bookend Set",
+  },
+  {
+    id: 18,
+    url: "https://i.postimg.cc/9QyqSQjt/SZV02581.jpg",
+    title: "Anime Protagonist Model",
+  },
+  {
+    id: 19,
+    url: "https://i.postimg.cc/MKMB7YPL/SZV02582.jpg",
+    title: "Fantasy Creature Statue",
+  },
+  {
+    id: 20,
+    url: "https://i.postimg.cc/gcBRL7DR/SZV02583.jpg",
+    title: "Mechanical Gear Sculpture",
+  },
+  {
+    id: 21,
+    url: "https://i.postimg.cc/wTZhZrRH/SZV02584.jpg",
+    title: "Artistic Pen Holder",
+  },
+  {
+    id: 22,
+    url: "https://i.postimg.cc/mDB3VFzH/SZV02585.jpg",
+    title: "Decorative Candle Holder",
+  },
+  {
+    id: 23,
+    url: "https://i.postimg.cc/VvHjYG7q/SZV02586.jpg",
+    title: "Futuristic Gadget Prototype",
+  },
+  {
+    id: 24,
+    url: "https://i.postimg.cc/D0zr3kcf/SZV02587.jpg",
+    title: "Mythical Beast Figurine",
+  },
+  {
+    id: 25,
+    url: "https://i.postimg.cc/pTJCtBbC/SZV02588.jpg",
+    title: "Customized Keychain Design",
+  },
+  {
+    id: 26,
+    url: "https://i.postimg.cc/6QGbFRpb/SZV02589.jpg",
+    title: "Architectural Miniature",
+  },
+  {
+    id: 27,
+    url: "https://i.postimg.cc/gkN7hm7s/SZV02590.jpg",
+    title: "Stylized Animal Figurine",
+  },
+  {
+    id: 28,
+    url: "https://i.postimg.cc/qvq5XWVT/SZV02591.jpg",
+    title: "Modular Storage Solution",
+  },
+  {
+    id: 29,
+    url: "https://i.postimg.cc/X7VhXpsX/SZV02592.jpg",
+    title: "Anime Villain Character",
+  },
+  {
+    id: 30,
+    url: "https://i.postimg.cc/GpZVpKf1/SZV02593.jpg",
+    title: "Decorative Coaster Set",
+  },
+  {
+    id: 31,
+    url: "https://i.postimg.cc/pXRN80LW/SZV02594.jpg",
+    title: "Intricate Puzzle Box",
+  },
+  {
+    id: 32,
+    url: "https://i.postimg.cc/Gmg6WdJt/SZV02595.jpg",
+    title: "Cosplay Prop Accessory",
+  },
+  {
+    id: 33,
+    url: "https://i.postimg.cc/X78Rgwrw/SZV02596.jpg",
+    title: "Miniature Vehicle Model",
+  },
+  {
+    id: 34,
+    url: "https://i.postimg.cc/zf6Zg8V6/SZV02597.jpg",
+    title: "Functional Mechanical Toy",
+  },
+  {
+    id: 35,
+    url: "https://i.postimg.cc/W4Hjw0f9/SZV02598.jpg",
+    title: "Artistic Wall Clock",
+  },
+  {
+    id: 36,
+    url: "https://i.postimg.cc/jj5tfMvw/SZV02599.jpg",
+    title: "Detailed Terrain Piece",
+  },
+  {
+    id: 37,
+    url: "https://i.postimg.cc/13y9mmqK/SZV02600.jpg",
+    title: "Character Chess Piece",
+  },
+  {
+    id: 38,
+    url: "https://i.postimg.cc/vHrYwgcB/SZV02601.jpg",
+    title: "Decorative Mask Display",
+  },
+  {
+    id: 39,
+    url: "https://i.postimg.cc/fTnzPjWp/SZV02602.jpg",
+    title: "Articulated Action Figure",
+  },
+  {
+    id: 40,
+    url: "https://i.postimg.cc/vmHHzY8m/SZV02603.jpg",
+    title: "Geometric Desk Sculpture",
+  },
+  {
+    id: 41,
+    url: "https://i.postimg.cc/rw9wx0kb/SZV02604.jpg",
+    title: "Fantasy Weapon Replica",
+  },
+  {
+    id: 42,
+    url: "https://i.postimg.cc/y8KNDhwc/SZV02605.jpg",
+    title: "Anime Accessory Prop",
+  },
+  {
+    id: 43,
+    url: "https://i.postimg.cc/HWJnRkwc/SZV02606.jpg",
+    title: "Detailed Architectural Element",
+  },
+  {
+    id: 44,
+    url: "https://i.postimg.cc/k5ndmfLY/SZV02607.jpg",
+    title: "Custom Game Token Set",
+  },
+  {
+    id: 45,
+    url: "https://i.postimg.cc/W1cv928v/SZV02608.jpg",
+    title: "Stylized Portrait Bust",
+  },
+  {
+    id: 46,
+    url: "https://i.postimg.cc/qBY03cCg/SZV02609.jpg",
+    title: "Functional Gadget Prototype",
+  },
+  {
+    id: 47,
+    url: "https://i.postimg.cc/Hxvm3XZZ/SZV02610.jpg",
+    title: "Decorative Shelf Accent",
+  },
+  {
+    id: 48,
+    url: "https://i.postimg.cc/cJZdJstm/SZV02611.jpg",
+    title: "Anime Scene Diorama",
+  },
+  {
+    id: 49,
+    url: "https://i.postimg.cc/cLfsZKCC/SZV02612.jpg",
+    title: "Mechanical Puzzle Toy",
+  },
+  {
+    id: 50,
+    url: "https://i.postimg.cc/SR5yQCc2/SZV02613.jpg",
+    title: "Customized Nameplate",
+  },
+  {
+    id: 51,
+    url: "https://i.postimg.cc/HnjYCB81/SZV02614.jpg",
+    title: "Artistic Jewelry Stand",
+  },
+  {
+    id: 52,
+    url: "https://i.postimg.cc/FRrFT99R/SZV02615.jpg",
+    title: "Miniature Building Model",
+  },
+  {
+    id: 53,
+    url: "https://i.postimg.cc/m2JDTfSX/SZV02616.jpg",
+    title: "Fantasy Creature Collectible",
+  },
+  {
+    id: 54,
+    url: "https://i.postimg.cc/fLDy1cvM/SZV02617.jpg",
+    title: "Functional Desk Organizer",
+  },
+  {
+    id: 55,
+    url: "https://i.postimg.cc/rp6KNX00/SZV02618.jpg",
+    title: "Anime Weapon Replica",
+  },
+  {
+    id: 56,
+    url: "https://i.postimg.cc/NGNFPr2w/SZV02619.jpg",
+    title: "Decorative Wall Fixture",
+  },
+  {
+    id: 57,
+    url: "https://i.postimg.cc/x8dC1977/SZV02620.jpg",
+    title: "Custom Smartphone Stand",
+  },
+  {
+    id: 58,
+    url: "https://i.postimg.cc/4xyzSgxW/SZV02621.jpg",
+    title: "Detailed Vehicle Miniature",
+  },
+  {
+    id: 59,
+    url: "https://i.postimg.cc/26hd77Sm/SZV02622.jpg",
+    title: "Artistic Lamp Shade",
+  },
+  {
+    id: 60,
+    url: "https://i.postimg.cc/c17MKhzB/SZV02623.jpg",
+    title: "Character Collectible Set",
+  },
+  {
+    id: 61,
+    url: "https://i.postimg.cc/PJHW3vCD/SZV02624.jpg",
+    title: "Functional Mechanical Model",
+  },
+  {
+    id: 62,
+    url: "https://i.postimg.cc/tCW0nKjm/SZV02650.jpg",
+    title: "Decorative Tabletop Accent",
+  },
+  {
+    id: 63,
+    url: "https://i.postimg.cc/z3mj122y/SZV02651.jpg",
+    title: "Anime Character Statue",
+  },
+  {
+    id: 64,
+    url: "https://i.postimg.cc/0561P6Hv/SZV02652.jpg",
+    title: "Custom Jewelry Design",
+  },
+  {
+    id: 65,
+    url: "https://i.postimg.cc/7Pp86xp2/SZV02653.jpg",
+    title: "Architectural Detail Model",
+  },
+  {
+    id: 66,
+    url: "https://i.postimg.cc/bwcCXr4m/SZV02654.jpg",
+    title: "Fantasy Scene Diorama",
+  },
+]
+
