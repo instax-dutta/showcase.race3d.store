@@ -190,11 +190,7 @@ export default function Gallery() {
           />
 
           {/* Image Title - More Prominent */}
-          <div className="absolute inset-x-0 top-0 bg-gradient-to-b from-[#000000]/50 to-transparent pt-6 sm:pt-8 pb-6 sm:pb-8 px-2 sm:px-3">
-            <h2 className="text-white text-center font-semibold text-sm sm:text-base md:text-lg drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
-              {currentItem.title}
-            </h2>
-          </div>
+          
 
           {/* Image Controls */}
           <div className="absolute inset-x-0 top-0 p-1 sm:p-2 flex justify-between items-center">
@@ -313,9 +309,7 @@ export default function Gallery() {
                 unoptimized
                 sizes="(max-width: 640px) 48px, 56px"
               />
-              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-1">
-                <span className="text-white text-[8px] truncate w-full text-center">{item.title}</span>
-              </div>
+              
             </button>
           ))}
         </div>
@@ -356,4 +350,3 @@ export default function Gallery() {
     </div>
   )
 }
-

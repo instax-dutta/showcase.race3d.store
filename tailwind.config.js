@@ -7,31 +7,31 @@ module.exports = {
       colors: {
         // Background Colors - Updated with eye-friendly colors
         background: {
-          primary: "#f8f9fa",
-          secondary: "#f1f3f5",
-          tertiary: "#e9ecef",
+          primary: "#ffffff",
+          secondary: "#f0f8ff",
+          tertiary: "#e0ffff",
         },
         // Text Colors - Softer, less harsh
         text: {
-          primary: "#4b5563",
-          secondary: "#6b7280",
-          muted: "#9ca3af",
+          primary: "#333333",
+          secondary: "#555555",
+          muted: "#777777",
         },
-        // Brand Colors - More muted, less saturated
+        // Brand Colors - More vibrant and accessible
         brand: {
-          primary: "#b8c4d0",
-          "primary-hover": "#a5b4c2",
-          secondary: "#d8d3cd",
-          "secondary-hover": "#c9c3bc",
-          accent: "#e9ecef",
+          primary: "#6495ed",
+          "primary-hover": "#4682b4",
+          secondary: "#add8e6",
+          "secondary-hover": "#87ceeb",
+          accent: "#b0e0e6",
         },
-        // UI Elements - Softer borders and focus states
+        // UI Elements - Clearer and more distinct
         ui: {
-          border: "#e5e7eb",
-          input: "#e5e7eb",
-          focus: "#b8c4d0",
-          success: "#9bb0c4",
-          error: "#c4b0b0",
+          border: "#c0c0c0",
+          input: "#f0f8ff",
+          focus: "#6495ed",
+          success: "#90ee90",
+          error: "#f08080",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -76,4 +76,3 @@ module.exports = {
   },
   plugins: [require("tailwindcss-animate")],
 }
-
